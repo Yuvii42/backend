@@ -1,32 +1,16 @@
-const { error, log } = require('console');
+const { log } = require('console');
 const fs = require('fs');
+const os = require("os");
 
-/*
-//Sync...
-fs.writeFileSync('./test.txt', 'Hey Yuvraj, How are you? ')
-
-//Async...
-fs.writeFile('./test.txt', "Hello World Async", (error))
-*/
-
-/*
-//Async
-const result = fs.readFileSync("./test.txt", "utf-8")
-console.log(result);
+console.log(os.cpus().length);
 
 
-//Sync
-fs.readFile("./test.txt", "utf-8", (err, result) => {
-    if(err){
-        console.log("Error", err);
-        
-    }else{
-        console.log(result);
-        
-    }
-})
-*/
+//Non-Blocking
+fs.readFile('test.txt', 'utf-8', (err, result) => {
+    //console.log(result);
+    
+});
 
-fs.appendFileSync("./test.txt", `${Date.now()} Hey There \n`);
+//console.log("2");
 
 
